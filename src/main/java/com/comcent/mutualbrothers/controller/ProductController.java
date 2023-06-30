@@ -31,6 +31,12 @@ public class ProductController {
     }
 
 
+    @GetMapping("/count")
+    public Mono<Long> getProductCount() {
+
+        return productService.getProductCount();
+    }
+
     @GetMapping("/range")
     public Flux<ProductDto> getProductsBetweenRange(@RequestParam double min, @RequestParam double max) {
 
@@ -57,5 +63,12 @@ public class ProductController {
     public Mono<Void> deleteProduct(@PathVariable String id) {
 
         return productService.deleteProduct(id);
+    }
+
+
+    @DeleteMapping
+    public Mono<Void> deleteAllProducts() {
+
+        return productService.deleteAllProducts();
     }
 }

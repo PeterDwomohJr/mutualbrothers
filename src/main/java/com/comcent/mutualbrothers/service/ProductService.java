@@ -29,6 +29,12 @@ public class ProductService {
     }
 
 
+    public Mono<Long> getProductCount() {
+
+        return productRepository.count();
+    }
+
+
     public Flux<ProductDto> getProductsBetweenPriceRange(double min, double max) {
 
         return productRepository.findAll().map(AppUtils::entityToDto)
@@ -58,5 +64,11 @@ public class ProductService {
     public Mono<Void> deleteProduct(String id) {
 
         return productRepository.deleteById(id);
+    }
+
+
+    public Mono<Void> deleteAllProducts() {
+
+        return productRepository.deleteAll();
     }
 }
