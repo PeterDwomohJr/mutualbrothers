@@ -1,0 +1,10 @@
+spring:
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/ProductDatabase
+
+
+
+server:
+  port: 9292
+  shutdown: graceful
