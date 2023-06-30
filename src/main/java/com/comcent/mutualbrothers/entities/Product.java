@@ -8,6 +8,7 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.stereotype.Component;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Data
@@ -23,4 +24,5 @@ public class Product {
     private int quantity;
     private double price;
     private List<Message> messages;
+    private LocalDateTime dateCreated = LocalDateTime.now();
 }
